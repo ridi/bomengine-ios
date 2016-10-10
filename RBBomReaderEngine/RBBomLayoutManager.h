@@ -8,10 +8,10 @@
 
 #import "RBBomNodeInfo.h"
 
-typedef enum {
+typedef NS_ENUM(NSInteger, RBBomLayoutPurpose) {
     RBBomLayoutPurposeRendering,
     RBBomLayoutPurposePaging,
-} RBBomLayoutPurpose;
+};
 
 @class RBBomNodeManager;
 @protocol RBBomRenderer;

@@ -12,17 +12,17 @@
 #import "RBBomAttribute.h"
 #import "RBBomStringBuilder.h"
 
-typedef enum {
-    CHARACTER_TYPE_TEXT,
-    CHARACTER_TYPE_TAG
-} RBCharacterType;
+typedef NS_ENUM(NSInteger, RBCharacterType) {
+    RBCharacterTypeText,
+    RBCharacterTypeTag
+};
 
-typedef enum {
-    PARSE_ATTR_INVALID_FORMAT,
-    PARSE_ATTR_END_OPNER,
-    PARSE_ATTR_END_FINISHED,
-    PARSE_ATTR_OK
-} RBParseAttrResult;
+typedef NS_ENUM(NSInteger, RBParseAttrResult) {
+    RBParseAttrResultInvalidFormat,
+    RBParseAttrResultEndOpner,
+    RBParseAttrResultEndFinished,
+    RBParseAttrResultOk
+};
 
 
 @interface RBBomParser () {
@@ -60,7 +60,7 @@ typedef enum {
         
         unichar ch = [reader getCurrPosChar];
         
-        if ([self guessNextCharacterType:ch] == CHARACTER_TYPE_TAG) {
+        if ([self guessNextCharacterType:ch] == RBCharacterTypeTag) {
             // 태그가 아닐 경우 돌아갈 위치 기억
             [reader rememberCurrPos];
             
@@ -112,10 +112,10 @@ typedef enum {
 - (RBCharacterType)guessNextCharacterType:(unichar)c {
     switch (c) {
         case '{':
-            return CHARACTER_TYPE_TAG;
+            return RBCharacterTypeTag;
             
         default:
-            return CHARACTER_TYPE_TEXT;
+            return RBCharacterTypeText;
     }
 }
 
@@ -218,14 +218,14 @@ typedef enum {
         
         RBParseAttrResult ret = [self parseAttrName:tagNode nameBuffer:attrName];
         
-        if (ret == PARSE_ATTR_INVALID_FORMAT) {
+        if (ret == RBParseAttrResultInvalidFormat) {
             return NO;
         }
-        else if (ret == PARSE_ATTR_END_OPNER) {
+        else if (ret == RBParseAttrResultEndOpner) {
             [tagNode setTagStatus:RBBomTagStatusOpener];
             return YES;
         }
-        else if (ret == PARSE_ATTR_END_FINISHED) {
+        else if (ret == RBParseAttrResultEndFinished) {
             [tagNode setTagStatus:RBBomTagStatusFinished];
             return YES;
         }
@@ -260,18 +260,18 @@ typedef enum {
         
         if (ch == '{') {
             // 또 다른 {가 나오면 잘못된 태그
-            return PARSE_ATTR_INVALID_FORMAT;
+            return RBParseAttrResultInvalidFormat;
         }
         if (ch == '}') {
             // 그냥 태그가 닫히면 OPENER TAG
             // 하지만 FONT, LINK가 아니면 FINISH 된 것으로 처리함
             [tagNode setTagStatus:RBBomTagStatusOpener];
-            return PARSE_ATTR_END_OPNER;
+            return RBParseAttrResultEndOpner;
         }
         else if (ch == '/' && [reader getCharSkipWhite] == '}') {
             // /} 형태로 닫히면 FINISHED
             [tagNode setTagStatus:RBBomTagStatusFinished];
-            return PARSE_ATTR_END_FINISHED;
+            return RBParseAttrResultEndFinished;
         }
         
         // attribute name이 끝나고 = 가 나오면 끝
@@ -282,7 +282,7 @@ typedef enum {
         [buffer appendString:[NSString stringWithFormat:@"%C", ch]];
     }
     
-    return PARSE_ATTR_OK;
+    return RBParseAttrResultOk;
 }
 
 - (BOOL)parseValueSyntax {

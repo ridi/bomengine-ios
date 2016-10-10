@@ -6,17 +6,17 @@
 //  Copyright 2011 YUTAR. All rights reserved.
 //
 
-typedef enum {
+typedef NS_ENUM(NSInteger, RBBomAlign) {
     RBBomAlignLeft,
     RBBomAlignCenter,
     RBBomAlignRight
-} RBBomAlign;
+};
 
-typedef enum {
+typedef NS_ENUM(NSInteger, RBBomSubscript) {
     RBBomSubscriptNone,
     RBBomSubscriptSup,
     RBBomSubscriptSub
-} RBBomSubscript;
+};
 
 
 @interface RBBomRendererContext : NSObject

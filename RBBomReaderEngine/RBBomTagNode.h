@@ -8,7 +8,7 @@
 
 #import "RBBomNode.h"
 
-typedef enum {
+typedef NS_ENUM(NSInteger, RBBomNodeTag) {
     RBBomNodeTagPage,
     RBBomNodeTagImg,
     RBBomNodeTagFont,
@@ -18,15 +18,15 @@ typedef enum {
     RBBomNodeTagSub,
     RBBomNodeTagText,
     RBBomNodeTagNothing,
-} RBBomNodeTag;
+};
 
 
-typedef enum {
+typedef NS_ENUM(NSInteger, RBBomTagStatus) {
     RBBomTagStatusOpener,
     RBBomTagStatusCloser,
     RBBomTagStatusFinished,
     RBBomTagStatusUnknown = 99,
-} RBBomTagStatus;
+};
 
 
 @class RBBomAttribute;
