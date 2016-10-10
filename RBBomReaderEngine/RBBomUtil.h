@@ -6,6 +6,9 @@
 //  Copyright 2011 YUTAR. All rights reserved.
 //
 
+#ifndef RBBomUtil_h
+#define RBBomUtil_h
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -32,4 +35,6 @@ extern "C" {
     
 #ifdef __cplusplus
 }
+#endif
+
 #endif
