@@ -6,6 +6,9 @@
 //  Copyright 2011 YUTAR. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
+#import <CoreGraphics/CoreGraphics.h>
+
 #import "RBBomUtil.h"
 #import "RBBomAttribute.h"
 #import "RBBomImageRenderable.h"

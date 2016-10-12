@@ -8,6 +8,7 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '7.0'
   s.source       = { :git => 'https://github.com/ridibooks/bomengine-ios.git', :tag => s.version }
   s.source_files = 'RBBomReaderEngine', 'RBBomReaderEngine/*.{h,m,mm}'
+  s.private_header_files = 'RBBomReaderEngine/RBBomStringBuilder.h'
   s.frameworks   = 'Foundation', 'CoreGraphics'
   s.module_map   = 'RBBomReaderEngine.modulemap'
   s.requires_arc = true
