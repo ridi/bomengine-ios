@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'RBBomReaderEngine'
-  s.version      = '1.0.3'
+  s.version      = '1.0.4'
   s.summary      = 'BOM parser engine for iOS platform'
   s.homepage     = 'https://github.com/ridibooks/bomengine-ios'
   s.authors      = { 'Ridibooks Viewer Team' => 'viewer.team@ridi.com' }
