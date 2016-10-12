@@ -1,0 +1,28 @@
+framework module RBBomReaderEngine {
+  umbrella header "RBBomReaderEngine.h"
+  
+  export *
+  module * { export * }
+  
+  link framework "Foundation"
+  link framework "CoreGraphics"
+  
+  header "RBBomUtil.h"
+  header "RBBomAttribute.h"
+  header "RBBomImageRenderable.h"
+  header "RBBomLayoutManager.h"
+  header "RBBomLocation.h"
+  header "RBBomNode.h"
+  header "RBBomNodeInfo.h"
+  header "RBBomNodeManager.h"
+  header "RBBomNodeRange.h"
+  header "RBBomParser.h"
+  header "RBBomDataReader.h"
+  header "RBBomRenderable.h"
+  header "RBBomRenderer.h"
+  header "RBBomRendererContext.h"
+  header "RBBomSelectable.h"
+  header "RBBomTagNode.h"
+  header "RBBomTextRenderable.h"
+  header "RBBomExceptionCaseController.h"
+}
