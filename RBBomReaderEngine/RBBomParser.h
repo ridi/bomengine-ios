@@ -15,7 +15,7 @@
 
 - (id)initWithReader:(RBBomDataReader*)reader;
 
-- (void)parse;
+- (void)parseWithEscapeTags:(BOOL)escapeTags;
 
 + (NSString *)removeTag:(NSString *)plainText;
 

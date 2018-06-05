@@ -52,7 +52,7 @@ typedef NS_ENUM(NSInteger, RBParseAttrResult) {
 }
 
 
-- (void)parse {
+- (void)parseWithEscapeTags:(BOOL)escapeTags {
     NSInteger lastOffset = 0;
     RBBomStringBuilder *parsedText = [[RBBomStringBuilder alloc] init];
     
@@ -60,7 +60,7 @@ typedef NS_ENUM(NSInteger, RBParseAttrResult) {
         
         unichar ch = [reader getCurrPosChar];
         
-        if ([self guessNextCharacterType:ch] == RBCharacterTypeTag) {
+        if (!escapeTags && [self guessNextCharacterType:ch] == RBCharacterTypeTag) {
             // 태그가 아닐 경우 돌아갈 위치 기억
             [reader rememberCurrPos];
             
