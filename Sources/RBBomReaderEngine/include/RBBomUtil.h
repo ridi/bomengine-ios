@@ -9,6 +9,9 @@
 #ifndef RBBomUtil_h
 #define RBBomUtil_h
 
+#import <Foundation/Foundation.h>
+#import <CoreGraphics/CoreGraphics.h>
+
 #ifdef __cplusplus
 extern "C" {
 #endif

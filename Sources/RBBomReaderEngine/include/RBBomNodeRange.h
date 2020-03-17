@@ -6,6 +6,8 @@
 //  Copyright 2011 YUTAR. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
+
 @protocol RBBomLocation;
 @class RBBomNodeInfo;
 
