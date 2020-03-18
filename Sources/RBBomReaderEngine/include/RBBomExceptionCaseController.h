@@ -14,6 +14,8 @@
  * 
  */
 
+#import <Foundation/Foundation.h>
+
 @class RBBomNodeManager;
 
 @interface RBBomExceptionCaseController : NSObject

@@ -6,6 +6,8 @@
 //  Copyright 2011 YUTAR. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
+
 @interface RBBomAttribute : NSObject {
     NSString *key;
     NSString *value;
