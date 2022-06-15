@@ -68,4 +68,8 @@
     _rawOffset += delta;
 }
 
++ (BOOL)supportsSecureCoding {
+  return YES;
+}
+
 @end
