@@ -10,7 +10,7 @@
 
 @class RBBomTagNode;
 
-@interface RBBomNodeInfo : NSObject <RBBomLocation, NSCoding>
+@interface RBBomNodeInfo : NSObject <RBBomLocation, NSCoding, NSSecureCoding>
 
 @property (nonatomic, readonly) NSInteger nodeIndex;
 @property (nonatomic) NSInteger offset;
